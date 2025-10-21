@@ -1,6 +1,4 @@
-
-King Sukh Guest House — Vite + React frontend and Express backend
-Generated: 2025-10-21T06:26:17.095440Z
+Guest House — Vite + React ( Frontend ) and Express ( Backend )
 
 How to run (development)
 1. Frontend:

@@ -122,11 +122,21 @@ function BookingForm(){
   }
   return (
     <form onSubmit={submit} className="form">
-      <label>Name<input name="name" value={state.name} onChange={handle} required /></label>
-      <label>Contact<input name="contact" value={state.contact} onChange={handle} required /></label>
-      <label>Check-in<input type="date" name="checkin" value={state.checkin} onChange={handle} required /></label>
-      <label>Nights<input type="number" name="nights" min="1" value={state.nights} onChange={handle} /></label>
-      <label>Message<textarea name="message" value={state.message} onChange={handle}></textarea></label>
+      <label>Name
+        <input name="name" value={state.name} onChange={handle} required />
+      </label>
+      <label>Contact
+        <input name="contact" value={state.contact} onChange={handle} required />
+      </label>
+      <label>Check-in
+        <input type="date" name="checkin" value={state.checkin} onChange={handle} required />
+      </label>
+      <label>Nights
+        <input type="number" name="nights" min="1" value={state.nights} onChange={handle} />
+      </label>
+      <label>Message
+        <textarea name="message" value={state.message} onChange={handle}></textarea>
+      </label>
       <button className="btn" type="submit">Send Booking</button>
       {sent && <div className="success">Thanks — booking request sent.</div>}
     </form>

@@ -1,0 +1,10 @@
+[
+  {
+    "receivedAt": "2025-10-21T06:45:21.689Z",
+    "name": "User",
+    "contact": "12345",
+    "checkin": "2025-10-22",
+    "nights": 1,
+    "message": "Testing"
+  }
+]

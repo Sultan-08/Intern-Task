@@ -1,23 +1,74 @@
 import React from 'react'
 
-const GOOGLE_MAPS_QUERY = encodeURIComponent("Beside Barshal Water Tank, Manpur, Barhanti, West Bengal 723156")
+const GOOGLE_MAPS_QUERY = encodeURIComponent("Kingsukh Guest House")
 
 export default function App(){
   return (
     <div>
-      <nav className="nav">
+      {/* <nav className="nav">
         <div className="container">
           <h1>King Sukh Guest House</h1>
-          <a className="btn" href="#book">Book Now</a>
+          <button className="btn btn-light"
+            onClick={() => document.getElementById('book').scrollIntoView({ behavior: 'smooth' })}>
+            Book Now
+          </button>
         </div>
-      </nav>
+      </nav> */}
+      <nav class="navbar bg-body-tertiary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">King Sukh Guest House</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Welcome</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              More
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Reviews</a></li>
+              <li><a class="dropdown-item" href="#">Blogs</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+        {/* <form class="d-flex mt-3" role="search"> */}
+          {/* <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> */}
+          <button className="btn btn-light"
+            onClick={() => document.getElementById('book').scrollIntoView({ behavior: 'smooth' })}>
+            Book Now 
+          </button>
+        {/* </form> */}
+      </div>
+    </div>
+  </div>
+</nav>
 
-      <header className="hero" style={{backgroundImage:'url(/images/header.jpg)'}}>
+      <header className="hero" style={{backgroundImage:'url(/images/ayodhya.webp)'}}>
         <div className="overlay"></div>
         <div className="hero-content container">
           <h2>Welcome to King Sukh Guest House</h2>
           <p>Comfort · Cleanliness · Hospitality</p>
-          <a className="btn btn-light" href="#book">Check Availability</a>
+          <button className="btn btn-light"
+            onClick={() => document.getElementById('book').scrollIntoView({ behavior: 'smooth' })}>
+            Check Availability
+          </button>
+          {/* <a className="btn btn-light" href="#book">Check Availability</a> */}
         </div>
       </header>
 
@@ -32,13 +83,16 @@ export default function App(){
                 <li>24/7 Hot Water</li>
                 <li>Daily Housekeeping</li>
               </ul>
-              <a className="btn" href="#book">View Rates</a>
+              <button className="btn btn-light"
+                onClick={() => document.getElementById('book').scrollIntoView({ behavior: 'smooth' })}>
+                View Rates
+              </button>
             </div>
             <div className="room-grid">
+              <img src="/images/small.jpg" alt="room" />
               <img src="/images/room1.jpg" alt="room" />
-              <img src="/images/room1.jpg" alt="room" />
-              <img src="/images/room1.jpg" alt="room" />
-              <img src="/images/room1.jpg" alt="room" />
+              <img src="/images/large.jpg" alt="room" />
+              <img src="/images/recep.jpg" alt="room" />
             </div>
           </div>
         </section>
@@ -46,7 +100,7 @@ export default function App(){
         <section id="gallery" className="section">
           <h3>Photo Gallery</h3>
           <div className="gallery">
-            {['header.jpg','large.jpg','out.jpg','recep.jpg','service.jpg','flower.jpg','small.jpg','ayodhya.webp'].map((img) => (
+            {['header.jpg','baranti.webp','out.jpg','mithonDam.webp','service.jpg','flower.jpg','logo.png','ayodhya.webp'].map((img) => (
               <img key={img} src={'/images/'+img} alt={img} onClick={() => window.open('/images/'+img,'_blank')} />
             ))}
           </div>
@@ -69,7 +123,7 @@ export default function App(){
             </div>
             <div>
               <h4>Contact & Location</h4>
-              <p>Beside Barshal Water Tank, Manpur, Barhanti, West Bengal 723156</p>
+              <p>Kingsukh Guest House, Beside Barshal Water Tank, Manpur, Barhanti, West Bengal-723156</p>
               <p><strong>Phone:</strong> +91 9007062180</p>
               <div className="map">
                 <iframe

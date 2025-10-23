@@ -41,11 +41,7 @@ export default function App(){
   </div>
 </nav> */}
       
-<<<<<<< HEAD
       <nav class="nav-new" >
-=======
-      <nav class="nav-new">
->>>>>>> d26385ba6b0f1ed5fd5f98ee331c26f7392e6dcb
         <h5 class="jp"><a href="#">Kingsukh Guest House</a></h5>
         <ul class="main-nav">
             <li><a href="#home">Home</a></li>
@@ -60,11 +56,7 @@ export default function App(){
 
       <header className="hero" style={{backgroundImage:'url(/images/ayodhya.webp)'}} id="home">
         <div className="overlay"></div>
-<<<<<<< HEAD
         <div className="hero-content container" >
-=======
-        <div className="hero-content container" id="home">
->>>>>>> d26385ba6b0f1ed5fd5f98ee331c26f7392e6dcb
           <h2>Welcome to King Sukh Guest House</h2>
           <p>Comfort · Cleanliness · Hospitality</p>
           <button className="btn btn-light"

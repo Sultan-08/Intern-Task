@@ -24,7 +24,7 @@ body {
   line-height: 1.5;
   color: #222;
 }
-.container {
+/* .container {
   max-width: 1100px;
   margin: 0 auto;
   padding: 1rem;
@@ -45,7 +45,7 @@ body {
 .nav h1 {
   font-size: 1.1rem;
   margin: 0;
-}
+} */
 .btn {
   background: var(--accent);
   color: #fff;
@@ -158,4 +158,136 @@ body {
 .success {
   margin-top: 0.5rem;
   color: green;
+}
+
+/* .navbar-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+} */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav a, a {
+    text-decoration: none;
+}
+
+.jp a,
+.main-nav a {
+    padding: 1rem 1.1rem;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: var(--darkbg);
+}
+.jp {
+    margin: 0;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+.main-nav a {
+    font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+.main-nav .active {
+    color: black;
+    font-weight: 700;
+}
+.nav-new {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+@media (min-width: 300px) {
+    .nav-new,
+    .main-nav {
+        display: flex;
+    }
+    .nav-new {
+        justify-content: space-around;
+        align-items: center;
+        height: 4rem;
+        width: 100%;
+        /* margin: 0 auto; */
+        /* max-width: 1150px; */
+        /* position: sticky;
+        top: 0;
+        z-index: 20; */
+    }
+}
+@media (min-width: 768px) {
+    .nav-new {
+        flex-direction: row;
+        justify-content: space-between;
+        /* padding-top: 20px;
+        padding-bottom: 20px; */
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        padding: 0.5rem 10rem 0.5rem 2.5rem;
+    }
+    .main-nav .active {
+        color: black;
+    }
+    .main-nav {
+        margin-right: 0.5rem;
+        margin-top: 0.3rem;
+    }
+    .main-nav a:hover {
+        color: var(--gray-02);
+        transition: .5s ease-in-out;
+    }
+    .jp {
+        margin-left: 1.5em;
+        font-size: 1.45em;
+    }
+    .jp a {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        color: black;
+    }
+    .main-nav a:hover {
+        color: black;
+    }
+    .main-nav a {
+        margin: 1rem 1rem;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        font-size: 1.2rem;
+    }
+    nav a {
+        position: relative;
+    }
+    nav a:after{
+        content: '';
+        position: absolute;
+        width: 0; height: 3px;
+        display: block;
+        margin-top: 3px;
+        right: 0;
+        background: linear-gradient(120deg, #5591FF 0%, #42b0f4 100%);
+        transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        -webkit-transition: width .5s ease;
+    }
+    nav a:hover:after {
+        width: 100%;
+        left: 0;
+        background: linear-gradient(120deg, #5591FF 0%, #42b0f4 100%);;
+    }
 }

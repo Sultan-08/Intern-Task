@@ -331,13 +331,17 @@ nav a, a {
 }
 
 /* Column Headings */
-.footer-column h3 {
+.footer-column0 ul {
+  padding: 0%;
+  margin: 0%;
+}
+.footer-column0 h3 {
   font-size: 18px;
   color: #fff;
   margin-bottom: 15px;
   position: relative;
 }
-.footer-column h3::after {
+.footer-column0 h3::after {
   content: "";
   width: 40px;
   height: 3px;
@@ -348,17 +352,18 @@ nav a, a {
 }
 
 /* Links */
-.footer-links li {
+
+.footer-links2 li {
   list-style: none;
-  margin: 8px 0;
+  /* margin: 0px 0; */
 }
-.footer-links a {
+.footer-links2 a {
   text-decoration: none;
   color: #bbb;
   font-size: 14px;
   transition: all 0.3s ease;
 }
-.footer-links a:hover {
+.footer-links2 a:hover {
   color: #f4b400;
   padding-left: 5px;
 }
@@ -454,7 +459,7 @@ nav a, a {
   .footer-container {
     text-align: center;
   }
-  .footer-column h3::after {
+  .footer-column0 h3::after {
     margin: 8px auto 0;
   }
   .footer-form {
@@ -466,21 +471,21 @@ nav a, a {
   }
 
   /* Slide-up animation for mobile view */
-  .footer-column {
+  .footer-column0 {
     opacity: 0;
     transform: translateY(30px);
     animation: slideUp 0.8s forwards;
   }
-  .footer-column:nth-child(1) {
+  .footer-column0:nth-child(1) {
     animation-delay: 0.2s;
   }
-  .footer-column:nth-child(2) {
+  .footer-column0:nth-child(2) {
     animation-delay: 0.4s;
   }
-  .footer-column:nth-child(3) {
+  .footer-column0:nth-child(3) {
     animation-delay: 0.6s;
   }
-  .footer-column:nth-child(4) {
+  .footer-column0:nth-child(4) {
     animation-delay: 0.8s;
   }
 

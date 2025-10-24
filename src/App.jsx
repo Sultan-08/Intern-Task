@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from "./components/footer";
 
 const GOOGLE_MAPS_QUERY = encodeURIComponent("Kingsukh Guest House")
 
@@ -132,12 +133,14 @@ export default function App(){
 
       </main>
 
-      <footer className="footer">
+      {/* <footer className="footer">
         <div className="container">
           <div>© {new Date().getFullYear()} King Sukh Guest House</div>
           <div>Made with care</div>
         </div>
-      </footer>
+      </footer> */}
+
+      <Footer />
     </div>
   )
 }

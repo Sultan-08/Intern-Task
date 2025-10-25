@@ -1,5 +1,5 @@
 // components/Footer.jsx
-
+import React from 'react'
 
 export default function Footer() {
   return (
@@ -29,8 +29,8 @@ export default function Footer() {
     <div class="footer-column0">
       <h3>Contact Us</h3>
       <ul class="footer-contact">
-        <li><i class="fa fa-map-marker"></i> Goa, India</li>
-        <li><i class="fa fa-phone"></i> +91 98765 43210</li>
+        <li><i class="fa fa-map-marker"></i> Barhanti, West Bengal, India</li>
+        <li><i class="fa fa-phone"></i> +91 9007062180</li>
         <li><i class="fa fa-envelope"></i> support@ksgh.com</li>
       </ul>
     </div>
@@ -38,10 +38,7 @@ export default function Footer() {
     <div class="footer-column0">
       <h3>Stay Updated</h3>
       <p>Subscribe for exclusive offers and travel inspirations.</p>
-      <form class="footer-form">
-        <input type="email" placeholder="Enter your email" required />
-        <button type="submit">Subscribe</button>
-      </form>
+      <Subscription />
     </div>
   </div>
 
@@ -55,5 +52,48 @@ export default function Footer() {
   </div>
 </footer>
 
+  );
+}
+
+// Subscription 
+function Subscription(){
+  const [state,setState] = React.useState({email:''})
+  const [sent,setSent] = React.useState(false)
+  function handle(e){
+    setState({...state,[e.target.name]: e.target.value})
+  }
+  async function submit(e){
+    e.preventDefault()
+    // send to backend
+    try{
+      const res = await fetch('http://localhost:4000/api/subscription', {
+        method:'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(state)
+      })
+      if(res.ok){
+        setSent(true)
+        setState({email:''})
+      } else {
+        const err = await res.text()
+        alert('Error: '+err)
+      }
+    } catch(err){
+      alert('Network error: '+err.message)
+    }
+  }
+  return (
+    <div>
+    <form onSubmit={submit} className="footer-form">
+        <input type="email" name="email" placeholder="Enter your email" value={state.email} onChange={handle} required />
+      <button type="submit">Subscribe</button>
+      {/* {sent && <div className="success">Thanks — subscription added.</div>} */}
+    </form>
+    {sent && (
+  <div className="success2"><b>
+    Thanks — subscription added successfully ✅</b>
+  </div>
+)}
+</div>
   );
 }

@@ -15,6 +15,7 @@ app.use((req,res,next)=>{
 })
 
 const DATA_FILE = path.join(__dirname, 'bookings.json')
+const SUBS_FILE = path.join(__dirname, 'subscription.json')
 
 app.post('/api/bookings', (req,res)=>{
   const booking = Object.assign({receivedAt: new Date().toISOString()}, req.body || {})
@@ -42,6 +43,37 @@ app.get('/api/bookings', (req,res)=>{
     res.json(data)
   }catch(e){
     res.status(500).send('Failed to read bookings')
+  }
+})
+
+// Subscription Routes
+
+app.post('/api/subscription', (req,res)=>{
+  const subscribe = Object.assign({receivedAt: new Date().toISOString()}, req.body || {})
+  let arr = []
+  try{
+    if(fs.existsSync(SUBS_FILE)){
+      arr = JSON.parse(fs.readFileSync(SUBS_FILE))
+    }
+  }catch(e){
+    console.error('read error',e)
+  }
+  arr.push(subscribe)
+  try{
+    fs.writeFileSync(SUBS_FILE, JSON.stringify(arr, null, 2))
+    res.status(201).json({ok:true})
+  }catch(e){
+    console.error('write error',e)
+    res.status(500).send('Failed to save subscription')
+  }
+})
+
+app.get('/api/subscription', (req,res)=>{
+  try{
+    const data = fs.existsSync(SUBS_FILE) ? JSON.parse(fs.readFileSync(SUBS_FILE)) : []
+    res.json(data)
+  }catch(e){
+    res.status(500).send('Failed to read subscription')
   }
 })
 

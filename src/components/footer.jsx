@@ -1,6 +1,5 @@
 // components/Footer.jsx
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { byPrefixAndName } from '@awesome.me/kit-KIT_CODE/icons'
+
 
 export default function Footer() {
   return (
@@ -49,9 +48,9 @@ export default function Footer() {
   <div class="footer-bottom">
     <p><i>King Sukh Guest House</i> | All rights reserved | © 2025</p>
     <div class="footer-social">
-      <a href="#"><i><FontAwesomeIcon icon={byPrefixAndName.fab['facebook']} /></i></a>
-      <a href="#"><i class="fas fa-instagram"></i></a>
-      <a href="#"><i class="fas fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
   </div>
 </footer>
